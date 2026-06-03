@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://ckudr8chj1kgo"]
+
+[ext_resource type="Script" uid="uid://blixweby6jkr2" path="res://Script/player.gd" id="1_kpjcp"]
+[ext_resource type="Texture2D" uid="uid://dqbk6mh6585hp" path="res://Art/32x32Fox2.png" id="2_gntrk"]
+[ext_resource type="Texture2D" uid="uid://b5kscx6yvsv7a" path="res://Art/32x32Fox.png" id="2_kyqiw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpjcp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dewec"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gntrk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_kyqiw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=529758429]
+script = ExtResource("1_kpjcp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=356749095]
+shape = SubResource("RectangleShape2D_kpjcp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1596129837]
+sprite_frames = SubResource("SpriteFrames_dewec")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=788175218]
+position_smoothing_enabled = true

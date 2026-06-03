@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cu3dx2a877xy1"]
+
+[ext_resource type="Script" uid="uid://82chhlul5db2" path="res://Script/inventory.gd" id="1_wdn4f"]
+
+[node name="Inventory" type="CanvasLayer" unique_id=600788114]
+script = ExtResource("1_wdn4f")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=523929102]
+offset_left = 120.0
+offset_top = 51.0
+offset_right = 152.0
+offset_bottom = 83.0
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="TextureRect" unique_id=382311671]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+color = Color(0.14333999, 0.14333999, 0.14333999, 1)
