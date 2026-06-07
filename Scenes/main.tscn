@@ -1,21 +1,33 @@
 [gd_scene format=3 uid="uid://c4wefgmmgkadt"]
 
 [ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://Scenes/Player.tscn" id="1_jjgbg"]
-[ext_resource type="Texture2D" uid="uid://b5kscx6yvsv7a" path="res://Art/32x32Fox.png" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://bjyuo4pummxqb" path="res://Scenes/Weapon.tscn" id="1_jjvhh"]
+[ext_resource type="Script" uid="uid://bgplnrv8n6nvx" path="res://Script/main.gd" id="1_kry3j"]
 [ext_resource type="PackedScene" uid="uid://cu3dx2a877xy1" path="res://Scenes/inventory.tscn" id="3_8gbba"]
+[ext_resource type="Texture2D" uid="uid://dimqu1y7gauo3" path="res://Art/space.png" id="5_kry3j"]
+[ext_resource type="PackedScene" uid="uid://cqwpkl8lnk12f" path="res://Scenes/enemy.tscn" id="6_21xkr"]
 
 [node name="Main" type="Node2D" unique_id=1681652560]
+script = ExtResource("1_kry3j")
+weap = ExtResource("1_jjvhh")
 
 [node name="Player" parent="." unique_id=1545094889 instance=ExtResource("1_jjgbg")]
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1805544106]
-z_index = -1
-offset_left = -623.0
-offset_top = -532.0
-offset_right = 602.0
-offset_bottom = 453.0
-scale = Vector2(4, 4)
-texture = ExtResource("2_bo1nx")
-stretch_mode = 1
-
 [node name="Inventory" parent="." unique_id=1854652183 instance=ExtResource("3_8gbba")]
+
+[node name="Weapon" parent="." unique_id=1371974587 instance=ExtResource("1_jjvhh")]
+position = Vector2(25, 1)
+
+[node name="SpaceBackground" type="Parallax2D" parent="." unique_id=89980816]
+z_index = -6
+repeat_size = Vector2(320, 320)
+autoscroll = Vector2(1, 1)
+repeat_times = 4
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="SpaceBackground" unique_id=863798367]
+texture = ExtResource("5_kry3j")
+
+[node name="Enemy" parent="." unique_id=1526071805 instance=ExtResource("6_21xkr")]
+position = Vector2(71, 0)

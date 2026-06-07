@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dhdbgvv53dmqq"]
+
+[ext_resource type="Texture2D" uid="uid://bl45u7sj4ow3g" path="res://Art/brainiac-1.png.png" id="1_4gyqm"]
+[ext_resource type="Script" uid="uid://b3rplyy2aawfd" path="res://Scenes/enemy.gd" id="1_afpow"]
+[ext_resource type="Texture2D" uid="uid://cvui6e3g32gbv" path="res://Art/brainiac-2.png.png" id="2_qi2p4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_afpow"]
+height = 32.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_afpow"]
+resource_local_to_scene = true
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_epg4t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4gyqm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qi2p4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1526071805]
+collision_layer = 3
+script = ExtResource("1_afpow")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=341920710]
+shape = SubResource("CapsuleShape2D_afpow")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=602762523]
+material = SubResource("ShaderMaterial_afpow")
+sprite_frames = SubResource("SpriteFrames_epg4t")
+frame_progress = 0.23138437
+
+[node name="HP" type="Label" parent="." unique_id=539922144]
+offset_left = -20.0
+offset_top = -41.0
+offset_right = 20.0
+offset_bottom = -18.0
+text = "HP"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1942105472]
