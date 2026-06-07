@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bjyuo4pummxqb"]
+
+[ext_resource type="Script" uid="uid://hxrop75x516l" path="res://Script/weapon.gd" id="1_sw2lr"]
+[ext_resource type="PackedScene" uid="uid://bc85c0swa07k8" path="res://Scenes/bullet.tscn" id="2_lstme"]
+[ext_resource type="Texture2D" uid="uid://dnv8cd0cxx2xq" path="res://Art/Weapons/centeredGun.png" id="3_lstme"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sw2lr"]
+size = Vector2(11.5, 7.5)
+
+[node name="Weapon" type="Node2D" unique_id=1371974587]
+script = ExtResource("1_sw2lr")
+bullet = ExtResource("2_lstme")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1984289734]
+texture = ExtResource("3_lstme")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1026643368]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=856064809]
+position = Vector2(-0.75, -0.75)
+shape = SubResource("RectangleShape2D_sw2lr")
+
+[node name="tip" type="Marker2D" parent="." unique_id=1740042207]
+position = Vector2(2, -2.5)
+
+[node name="reloadTimer" type="Timer" parent="." unique_id=123679317]
+one_shot = true
