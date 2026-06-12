@@ -5,7 +5,8 @@
 [ext_resource type="Script" uid="uid://bgplnrv8n6nvx" path="res://Script/main.gd" id="1_kry3j"]
 [ext_resource type="PackedScene" uid="uid://cu3dx2a877xy1" path="res://Scenes/inventory.tscn" id="3_8gbba"]
 [ext_resource type="Texture2D" uid="uid://dimqu1y7gauo3" path="res://Art/space.png" id="5_kry3j"]
-[ext_resource type="PackedScene" uid="uid://cqwpkl8lnk12f" path="res://Scenes/enemy.tscn" id="6_21xkr"]
+[ext_resource type="PackedScene" uid="uid://dhdbgvv53dmqq" path="res://Scenes/enemy.tscn" id="6_21xkr"]
+[ext_resource type="PackedScene" uid="uid://b7lkvmkue5or3" path="res://Scenes/dungeon_gen.tscn" id="7_6bp64"]
 
 [node name="Main" type="Node2D" unique_id=1681652560]
 script = ExtResource("1_kry3j")
@@ -18,8 +19,13 @@ weap = ExtResource("1_jjvhh")
 [node name="Weapon" parent="." unique_id=1371974587 instance=ExtResource("1_jjvhh")]
 position = Vector2(25, 1)
 
+[node name="Enemy" parent="." unique_id=1526071805 instance=ExtResource("6_21xkr")]
+position = Vector2(71, 0)
+
+[node name="dungeonGen" parent="." unique_id=1327521547 instance=ExtResource("7_6bp64")]
+
 [node name="SpaceBackground" type="Parallax2D" parent="." unique_id=89980816]
-z_index = -6
+z_index = -10
 repeat_size = Vector2(320, 320)
 autoscroll = Vector2(1, 1)
 repeat_times = 4
@@ -28,6 +34,3 @@ metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="SpaceBackground" unique_id=863798367]
 texture = ExtResource("5_kry3j")
-
-[node name="Enemy" parent="." unique_id=1526071805 instance=ExtResource("6_21xkr")]
-position = Vector2(71, 0)

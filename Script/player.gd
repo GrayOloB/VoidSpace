@@ -10,6 +10,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	GlobVars.playerPos = position
 	var vel = Vector2.ZERO
 	if Input.is_action_pressed("left"):
 		vel.x -= 1

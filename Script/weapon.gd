@@ -3,6 +3,7 @@ var dmg = 1
 var reloadTime = 6
 var magSize = 12
 var radius = 20
+var range = 20
 var weapOwner = null
 var wpType = "Pistol"
 var pulledData = null
@@ -51,6 +52,14 @@ func _process(delta: float) -> void:
 		if Input.is_action_pressed("leftClick") :
 			shoot()
 		pass
+	if weapOwner.name == "Enemy":
+		var play = GlobVars.playerPos
+		if weapOwner.global_position.distance_to(play) > range:
+			return
+		position = radius * weapOwner.global_position.direction_to(play)
+		look_at(play)
+		shoot()
+	
 	pass
 
 func shoot():

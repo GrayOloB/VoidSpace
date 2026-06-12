@@ -18,7 +18,7 @@ var weapons = [
 	]
 var currentweap = []
 	#CONTAINS PLAYER'S WEAPON INVENTORY
-
+var playerPos = Vector2()
 var activeWeap = "Pistol"
 var ammoC = 6
 var magS = 6
